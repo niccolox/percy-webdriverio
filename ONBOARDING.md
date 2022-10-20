@@ -14,11 +14,15 @@ Prod - https://www.browserstack.com
 
 Non-Prod - https://k8s.bsstag.com/ 
 
-```
+
+https://percy.io/3fdc3ca1/nicholas-percy-webdriverio
+
+production branch 
+```shell
 npx PERCY_BRANCH=production percy exec -- node production.js
 ```
-
-```
+staging branch
+```shell
 npx PERCY_BRANCH=staging percy exec -- node staging.test.js
 npx percy exec -- wdio wdio.conf.js
 ```
