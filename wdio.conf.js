@@ -14,10 +14,10 @@ exports.config = {
   }],
 
   onPrepare() {
-    require('geckodriver').start();
+    require(' geckodriver').start();
   },
 
   onComplete() {
-    require('geckodriver').stop();
+    require(' geckodriver').stop();
   }
 };

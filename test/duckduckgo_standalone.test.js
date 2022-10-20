@@ -1,0 +1,24 @@
+const { remote } = require('webdriverio');
+const percySnapshot = require('@percy/webdriverio');
+
+(async () => {
+  const browser = await remote({
+    logLevel: 'trace',
+    capabilities: {
+      browserName: 'chrome'
+    }
+  });
+
+  await browser.url('https://duckduckgo.com');
+
+  const inputElem = await browser.$('#search_form_input_homepage');
+  await inputElem.setValue('WebdriverIO');
+
+  const submitBtn = await browser.$('#search_button_homepage');
+  await submitBtn.click();
+
+  // the browser object is required in standalone mode
+  percySnapshot(browser, 'WebdriverIO at DuckDuckGo');
+
+  await browser.deleteSession();
+})().catch((e) => console.error(e));
