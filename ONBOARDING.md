@@ -14,10 +14,11 @@ Prod - https://www.browserstack.com
 
 Non-Prod - https://k8s.bsstag.com/ 
 
+production 
 ```
 npx PERCY_BRANCH=production percy exec -- node production.js
 ```
-
+staging
 ```
 npx PERCY_BRANCH=staging percy exec -- node staging.test.js
 npx percy exec -- wdio wdio.conf.js
